@@ -1,0 +1,306 @@
+{
+  "Law": {
+    "dataset": "Law",
+    "outcome_type": "binary",
+    "selection": {
+      "criterion": "lowest mean out-of-sample primary loss",
+      "simplicity_tolerance_relative": 0.01,
+      "causal_effects_used": false
+    },
+    "sample_size": 1000,
+    "cv": 2,
+    "random_state": 4,
+    "outcome_model": {
+      "name": "linear_with_interactions",
+      "params": {},
+      "primary_metric": "log_loss",
+      "primary_score": 0.15503863935389575,
+      "secondary_scores": {
+        "brier": 0.03941430955243033,
+        "auroc": 0.857978947368421
+      }
+    },
+    "propensity_models": {
+      "a_given_c": {
+        "name": "logistic",
+        "params": {},
+        "primary_metric": "log_loss",
+        "primary_score": 0.45611926335265035,
+        "secondary_scores": {
+          "brier": 0.14073280987138945,
+          "auroc": 0.5887539434809494
+        }
+      },
+      "a_given_mc": {
+        "name": "logistic",
+        "params": {},
+        "primary_metric": "log_loss",
+        "primary_score": 0.3265233454324491,
+        "secondary_scores": {
+          "brier": 0.09471386103794102,
+          "auroc": 0.834489645287203
+        }
+      }
+    },
+    "reduction": {
+      "name": "none",
+      "params": {}
+    },
+    "diagnostics": {
+      "min_effective_sample_size": 36.09975414810634,
+      "max_clipped_fraction": 0.065,
+      "propensity_c_percentiles": {
+        "p01": 0.06133108193132679,
+        "p05": 0.08786816137241772,
+        "p50": 0.18038289694226253,
+        "p95": 0.23753417474648658,
+        "p99": 0.24543493663366495
+      },
+      "propensity_mc_percentiles": {
+        "p01": 0.01,
+        "p05": 0.01,
+        "p50": 0.08797097244044985,
+        "p95": 0.6686225655674322,
+        "p99": 0.9017619128211893
+      },
+      "absolute_weight_percentiles": {
+        "p50": 0.013406631307426628,
+        "p90": 1.5375158047907747,
+        "p95": 4.507352248178639,
+        "p99": 11.381504935824498
+      }
+    }
+  },
+  "COMPAS": {
+    "dataset": "COMPAS",
+    "outcome_type": "binary",
+    "selection": {
+      "criterion": "lowest mean out-of-sample primary loss",
+      "simplicity_tolerance_relative": 0.01,
+      "causal_effects_used": false
+    },
+    "sample_size": 1000,
+    "cv": 2,
+    "random_state": 4,
+    "outcome_model": {
+      "name": "hgb_with_interactions",
+      "params": {
+        "l2_regularization": 1.0,
+        "learning_rate": 0.1,
+        "max_leaf_nodes": 15,
+        "max_iter": 150,
+        "early_stopping": true
+      },
+      "primary_metric": "log_loss",
+      "primary_score": 0.6375350442986347,
+      "secondary_scores": {
+        "brier": 0.2232786242697466,
+        "auroc": 0.6949728587212375
+      }
+    },
+    "propensity_models": {
+      "a_given_c": {
+        "name": "logistic",
+        "params": {},
+        "primary_metric": "log_loss",
+        "primary_score": 0.4634827635514061,
+        "secondary_scores": {
+          "brier": 0.14461489321551846,
+          "auroc": 0.5955774438563994
+        }
+      },
+      "a_given_mc": {
+        "name": "logistic",
+        "params": {},
+        "primary_metric": "log_loss",
+        "primary_score": 0.46351063605257387,
+        "secondary_scores": {
+          "brier": 0.14555870992207554,
+          "auroc": 0.6297474045616431
+        }
+      }
+    },
+    "reduction": {
+      "name": "none",
+      "params": {}
+    },
+    "diagnostics": {
+      "min_effective_sample_size": 74.78129061847916,
+      "max_clipped_fraction": 0.002,
+      "propensity_c_percentiles": {
+        "p01": 0.0669530796945612,
+        "p05": 0.0981181833503249,
+        "p50": 0.1517661400496223,
+        "p95": 0.29385981749120005,
+        "p99": 0.3301329603425516
+      },
+      "propensity_mc_percentiles": {
+        "p01": 0.01755883115904304,
+        "p05": 0.05226294533038338,
+        "p50": 0.16223949857221953,
+        "p95": 0.3425439011354133,
+        "p99": 0.40928198301309965
+      },
+      "absolute_weight_percentiles": {
+        "p50": 0.028434678358195704,
+        "p90": 2.088562906714306,
+        "p95": 4.388154110067196,
+        "p99": 8.98905859931229
+      }
+    }
+  },
+  "SCUT": {
+    "dataset": "SCUT",
+    "outcome_type": "continuous",
+    "selection": {
+      "criterion": "lowest mean out-of-sample primary loss",
+      "simplicity_tolerance_relative": 0.01,
+      "causal_effects_used": false
+    },
+    "sample_size": 1000,
+    "cv": 2,
+    "random_state": 4,
+    "outcome_model": {
+      "name": "linear_with_interactions",
+      "params": {},
+      "primary_metric": "rmse",
+      "primary_score": 0.5064034743452612,
+      "secondary_scores": {
+        "mae": 0.3979094240532908
+      }
+    },
+    "propensity_models": {
+      "a_given_c": {
+        "name": "logistic",
+        "params": {},
+        "primary_metric": "log_loss",
+        "primary_score": 0.6978321820258343,
+        "secondary_scores": {
+          "brier": 0.25233820770230264,
+          "auroc": 0.5097551114596958
+        }
+      },
+      "a_given_mc": {
+        "name": "logistic",
+        "params": {},
+        "primary_metric": "log_loss",
+        "primary_score": 0.5729693530233709,
+        "secondary_scores": {
+          "brier": 0.19300521337380444,
+          "auroc": 0.8227930059176405
+        }
+      }
+    },
+    "reduction": {
+      "name": "pca70",
+      "params": {
+        "n_components": 0.7,
+        "random_state": 4
+      }
+    },
+    "diagnostics": {
+      "min_effective_sample_size": 338.86603444314017,
+      "max_clipped_fraction": 0.0,
+      "propensity_c_percentiles": {
+        "p01": 0.4677081758231073,
+        "p05": 0.4677081758231073,
+        "p50": 0.4766380188258419,
+        "p95": 0.5346762424271898,
+        "p99": 0.5346762424271898
+      },
+      "propensity_mc_percentiles": {
+        "p01": 0.1902936622396363,
+        "p05": 0.255557121394157,
+        "p50": 0.48914306666920204,
+        "p95": 0.7441793492983331,
+        "p99": 0.8175128884127196
+      },
+      "absolute_weight_percentiles": {
+        "p50": 0.12957992353824493,
+        "p90": 2.1490413582494288,
+        "p95": 2.2366133820141236,
+        "p99": 3.793302600558478
+      }
+    }
+  },
+  "Reddit": {
+    "dataset": "Reddit",
+    "outcome_type": "continuous",
+    "selection": {
+      "criterion": "lowest mean out-of-sample primary loss",
+      "simplicity_tolerance_relative": 0.01,
+      "causal_effects_used": false
+    },
+    "sample_size": 1000,
+    "cv": 2,
+    "random_state": 4,
+    "outcome_model": {
+      "name": "hgb_with_interactions",
+      "params": {
+        "l2_regularization": 0.0,
+        "learning_rate": 0.05,
+        "max_leaf_nodes": 15,
+        "max_iter": 150,
+        "early_stopping": true
+      },
+      "primary_metric": "rmse",
+      "primary_score": 1.2126384613525487,
+      "secondary_scores": {
+        "mae": 0.9261767766175376
+      }
+    },
+    "propensity_models": {
+      "a_given_c": {
+        "name": "logistic",
+        "params": {},
+        "primary_metric": "log_loss",
+        "primary_score": 0.6870806967825188,
+        "secondary_scores": {
+          "brier": 0.24697196989333572,
+          "auroc": 0.5
+        }
+      },
+      "a_given_mc": {
+        "name": "logistic",
+        "params": {},
+        "primary_metric": "log_loss",
+        "primary_score": 0.6629733731422318,
+        "secondary_scores": {
+          "brier": 0.23160503958509404,
+          "auroc": 0.6718929679971362
+        }
+      }
+    },
+    "reduction": {
+      "name": "pca70",
+      "params": {
+        "n_components": 0.7,
+        "random_state": 4
+      }
+    },
+    "diagnostics": {
+      "min_effective_sample_size": 111.93879052462461,
+      "max_clipped_fraction": 0.0,
+      "propensity_c_percentiles": {
+        "p01": 0.5499948356763023,
+        "p05": 0.5499948356763023,
+        "p50": 0.5559935794485582,
+        "p95": 0.5619923232208142,
+        "p99": 0.5619923232208142
+      },
+      "propensity_mc_percentiles": {
+        "p01": 0.08419957587426613,
+        "p05": 0.1745137250650254,
+        "p50": 0.5711644353765823,
+        "p95": 0.8913295780147193,
+        "p99": 0.9411022197297786
+      },
+      "absolute_weight_percentiles": {
+        "p50": 0.03399059323016997,
+        "p90": 2.283065007794676,
+        "p95": 3.601487753338085,
+        "p99": 9.0523057955211
+      }
+    }
+  }
+}

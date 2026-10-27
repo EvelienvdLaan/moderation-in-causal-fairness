@@ -1,0 +1,324 @@
+{
+  "Law": {
+    "dataset": "Law",
+    "outcome_type": "binary",
+    "selection": {
+      "criterion": "lowest mean out-of-sample primary loss for outcome model only",
+      "simplicity_tolerance_relative": 0.01,
+      "causal_effects_used": false,
+      "propensity_models_prespecified": "LogisticRegression(C=1.0)",
+      "nested_model_prespecified": "LinearRegression"
+    },
+    "sample_size": 20970,
+    "cv": 3,
+    "random_state": 4,
+    "outcome_model": {
+      "name": "linear_with_interactions",
+      "params": {},
+      "primary_metric": "log_loss",
+      "primary_score": 0.15223681523231195,
+      "secondary_scores": {
+        "brier": 0.04112418204658131,
+        "auroc": 0.8622249020198974
+      }
+    },
+    "propensity_models": {
+      "a_given_c": {
+        "name": "logistic",
+        "params": {
+          "C": 1.0
+        },
+        "primary_metric": "log_loss",
+        "primary_score": 0.44118314826474375,
+        "secondary_scores": {
+          "brier": 0.13542729996565248,
+          "auroc": 0.5499281871239909
+        }
+      },
+      "a_given_mc": {
+        "name": "logistic",
+        "params": {
+          "C": 1.0
+        },
+        "primary_metric": "log_loss",
+        "primary_score": 0.3337013726487648,
+        "secondary_scores": {
+          "brier": 0.09691359405820972,
+          "auroc": 0.8110026378209992
+        }
+      }
+    },
+    "reduction": {
+      "name": "none",
+      "params": {}
+    },
+    "diagnostics": {
+      "min_effective_sample_size": 700.1124101249242,
+      "max_clipped_fraction": 0.03414401525989509,
+      "propensity_c_percentiles": {
+        "p01": 0.11542452667288351,
+        "p05": 0.12750618545325293,
+        "p50": 0.14364863151140939,
+        "p95": 0.20436966566048845,
+        "p99": 0.2066429107957013
+      },
+      "propensity_mc_percentiles": {
+        "p01": 0.01,
+        "p05": 0.01253617444273698,
+        "p50": 0.09197226128883906,
+        "p95": 0.6106547638882651,
+        "p99": 0.8703822410208032
+      },
+      "absolute_weight_percentiles": {
+        "p50": 0.005880459122887217,
+        "p90": 1.5920746422664498,
+        "p95": 5.038509656794535,
+        "p99": 9.724637630629296
+      }
+    }
+  },
+  "COMPAS": {
+    "dataset": "COMPAS",
+    "outcome_type": "binary",
+    "selection": {
+      "criterion": "lowest mean out-of-sample primary loss for outcome model only",
+      "simplicity_tolerance_relative": 0.01,
+      "causal_effects_used": false,
+      "propensity_models_prespecified": "LogisticRegression(C=1.0)",
+      "nested_model_prespecified": "LinearRegression"
+    },
+    "sample_size": 8899,
+    "cv": 3,
+    "random_state": 4,
+    "outcome_model": {
+      "name": "hgb_with_interactions",
+      "params": {
+        "l2_regularization": 0.0,
+        "learning_rate": 0.1,
+        "max_leaf_nodes": 31,
+        "max_iter": 150,
+        "early_stopping": true
+      },
+      "primary_metric": "log_loss",
+      "primary_score": 0.5761485099395788,
+      "secondary_scores": {
+        "brier": 0.1953152355361667,
+        "auroc": 0.7697049066266998
+      }
+    },
+    "propensity_models": {
+      "a_given_c": {
+        "name": "logistic",
+        "params": {
+          "C": 1.0
+        },
+        "primary_metric": "log_loss",
+        "primary_score": 0.4636069261852563,
+        "secondary_scores": {
+          "brier": 0.14498989976988108,
+          "auroc": 0.5627954104021059
+        }
+      },
+      "a_given_mc": {
+        "name": "logistic",
+        "params": {
+          "C": 1.0
+        },
+        "primary_metric": "log_loss",
+        "primary_score": 0.45494253538887214,
+        "secondary_scores": {
+          "brier": 0.1428680948190607,
+          "auroc": 0.6266452253434692
+        }
+      }
+    },
+    "reduction": {
+      "name": "none",
+      "params": {}
+    },
+    "diagnostics": {
+      "min_effective_sample_size": 991.9215505240504,
+      "max_clipped_fraction": 0.0057309810091021466,
+      "propensity_c_percentiles": {
+        "p01": 0.11891397024860859,
+        "p05": 0.13441942802176662,
+        "p50": 0.15323703202276048,
+        "p95": 0.24794750154619247,
+        "p99": 0.2522943092293658
+      },
+      "propensity_mc_percentiles": {
+        "p01": 0.019049884317891178,
+        "p05": 0.06042589664624109,
+        "p50": 0.17981194296554992,
+        "p95": 0.2789330015981259,
+        "p99": 0.31437100319274597
+      },
+      "absolute_weight_percentiles": {
+        "p50": 0.02080805596440524,
+        "p90": 1.7685565433624084,
+        "p95": 4.771891146233221,
+        "p99": 6.910104045331798
+      }
+    }
+  },
+  "SCUT": {
+    "dataset": "SCUT",
+    "outcome_type": "continuous",
+    "selection": {
+      "criterion": "lowest mean out-of-sample primary loss for outcome model only",
+      "simplicity_tolerance_relative": 0.01,
+      "causal_effects_used": false,
+      "propensity_models_prespecified": "LogisticRegression(C=1.0)",
+      "nested_model_prespecified": "LinearRegression"
+    },
+    "sample_size": 5500,
+    "cv": 3,
+    "random_state": 4,
+    "outcome_model": {
+      "name": "linear_with_interactions",
+      "params": {},
+      "primary_metric": "rmse",
+      "primary_score": 0.4386375037363169,
+      "secondary_scores": {
+        "mae": 0.33974214516577467
+      }
+    },
+    "propensity_models": {
+      "a_given_c": {
+        "name": "logistic",
+        "params": {
+          "C": 1.0
+        },
+        "primary_metric": "log_loss",
+        "primary_score": 0.6938922726756056,
+        "secondary_scores": {
+          "brier": 0.2503724851875815,
+          "auroc": 0.4886001495275378
+        }
+      },
+      "a_given_mc": {
+        "name": "logistic",
+        "params": {
+          "C": 1.0
+        },
+        "primary_metric": "log_loss",
+        "primary_score": 0.4461702193440747,
+        "secondary_scores": {
+          "brier": 0.14307531223852124,
+          "auroc": 0.8832340533832629
+        }
+      }
+    },
+    "reduction": {
+      "name": "pca70",
+      "params": {
+        "n_components": 0.7,
+        "random_state": 4
+      }
+    },
+    "diagnostics": {
+      "min_effective_sample_size": 618.1903482626201,
+      "max_clipped_fraction": 0.0,
+      "propensity_c_percentiles": {
+        "p01": 0.48922736207411316,
+        "p05": 0.48922736207411316,
+        "p50": 0.4991269926752867,
+        "p95": 0.5109200229699621,
+        "p99": 0.5109200229699621
+      },
+      "propensity_mc_percentiles": {
+        "p01": 0.04598426174575605,
+        "p05": 0.08528385679995196,
+        "p50": 0.49610764771605076,
+        "p95": 0.9208849451635027,
+        "p99": 0.959730939185077
+      },
+      "absolute_weight_percentiles": {
+        "p50": 0.012388518127867055,
+        "p90": 2.041835676387662,
+        "p95": 2.0446553671498657,
+        "p99": 5.539548425735584
+      }
+    }
+  },
+  "Reddit": {
+    "dataset": "Reddit",
+    "outcome_type": "continuous",
+    "selection": {
+      "criterion": "lowest mean out-of-sample primary loss for outcome model only",
+      "simplicity_tolerance_relative": 0.01,
+      "causal_effects_used": false,
+      "propensity_models_prespecified": "LogisticRegression(C=1.0)",
+      "nested_model_prespecified": "LinearRegression"
+    },
+    "sample_size": 50000,
+    "cv": 3,
+    "random_state": 4,
+    "outcome_model": {
+      "name": "linear_with_interactions",
+      "params": {},
+      "primary_metric": "rmse",
+      "primary_score": 1.167159260804328,
+      "secondary_scores": {
+        "mae": 0.8663995920252173
+      }
+    },
+    "propensity_models": {
+      "a_given_c": {
+        "name": "logistic",
+        "params": {
+          "C": 1.0
+        },
+        "primary_metric": "log_loss",
+        "primary_score": 0.6869499874101718,
+        "secondary_scores": {
+          "brier": 0.24690772370302497,
+          "auroc": 0.5
+        }
+      },
+      "a_given_mc": {
+        "name": "logistic",
+        "params": {
+          "C": 1.0
+        },
+        "primary_metric": "log_loss",
+        "primary_score": 0.6196583030899228,
+        "secondary_scores": {
+          "brier": 0.21531545638762925,
+          "auroc": 0.7093727522573584
+        }
+      }
+    },
+    "reduction": {
+      "name": "pca70",
+      "params": {
+        "n_components": 0.7,
+        "random_state": 4
+      }
+    },
+    "diagnostics": {
+      "min_effective_sample_size": 12958.502268321545,
+      "max_clipped_fraction": 0.0,
+      "propensity_c_percentiles": {
+        "p01": 0.5540095224442962,
+        "p05": 0.5540095224442962,
+        "p50": 0.5555692063351646,
+        "p95": 0.5575020923936407,
+        "p99": 0.5575020923936407
+      },
+      "propensity_mc_percentiles": {
+        "p01": 0.15631474173925328,
+        "p05": 0.2432862088293965,
+        "p50": 0.567326992752067,
+        "p95": 0.8261252085135617,
+        "p99": 0.8791275349949486
+      },
+      "absolute_weight_percentiles": {
+        "p50": 0.0354835278463516,
+        "p90": 2.259897691741376,
+        "p95": 2.872863254006864,
+        "p99": 6.005012217469269
+      }
+    }
+  }
+}
